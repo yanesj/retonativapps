@@ -7,6 +7,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Instrucciones de instalación 
+
 Se clona el projecto y se recomienda para hacer las migraciones, correr php artisan migrate:fresh --seed, debido a que la tabla de "horarios" se llena mediante seeder, por último correr composer update.
 
 
