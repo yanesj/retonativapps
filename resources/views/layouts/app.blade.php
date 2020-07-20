@@ -13,6 +13,10 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<!-- Estilos Jqplot -->
+<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+
 
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -77,8 +81,17 @@
         float: none;
       }
     }
+
+
+  canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
   </style>
   <!-- fin css del panel izquierdo -->
+  
 </head>
 <body>
 
