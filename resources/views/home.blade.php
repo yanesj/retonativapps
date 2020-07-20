@@ -92,27 +92,7 @@
 <script type="text/javascript">
  var MONTHS = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     var color = Chart.helpers.color;
-    var barChartData = {
-      labels: ['January', 'February', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-      datasets: [{
-        label: 'Dataset 1',
-        backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-        borderColor: window.chartColors.red,
-        borderWidth: 1,
-        data: [
-          2,2,2,2,2,2,2
-        ]
-      }, {
-        label: 'Dataset 2',
-        backgroundColor: color(window.chartColors.gray).alpha(0.5).rgbString(),
-        borderColor: window.chartColors.blue,
-        borderWidth: 1,
-        data: [
-          2,2,2,2,2,2,2
-        ]
-      }]
-
-    };
+    var barChartData = {!! $cant_est !!};
 
     window.onload = function() {
       var ctx = document.getElementById('canvas').getContext('2d');
