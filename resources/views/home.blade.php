@@ -6,7 +6,9 @@
 <div class="sidebar">
     <a class="active"  href="{{route('home')}}">Home</a>
     <a   href="{{route('estudiante')}}">Crear Estudiantes</a>
+    <a   href="{{route('viewStudent')}}">Ver Estudiantes</a>
     <a   href="{{route('curso')}}">Crear Cursos</a>
+    <a   href="{{route('viewCourses')}}">Ver Cursos</a>
     <a   href="{{route('asigCurso')}}">Asignar Cursos</a>
     <a class="dropdown-item" href="{{ route('logout') }}"
     onclick="event.preventDefault();
@@ -35,11 +37,30 @@
                     </div>
                     @endif
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr align="center">
+                                <th colspan="2" >TOP DE LOS 3 CURSOS CON MÁS ESTUDIANTES EN LOS ÚLTIMOS 6 MESES</th>
+                            </tr>
+                            <tr>
+                                <th>Cursos</th>
+                                <th>Cantidad de Estudiantes</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                         @foreach ($cursos as $value)
+                         <tr>
+                           <td>{{$value->materia}}</td>
+                           <td>{{$value->cant_estud}}</td>
+                       </tr>
+                       @endforeach
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
+</div>
 </div>
 @endsection
 

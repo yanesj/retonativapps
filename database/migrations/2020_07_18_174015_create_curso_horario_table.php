@@ -19,6 +19,7 @@ class CreateCursoHorarioTable extends Migration
             $table->bigInteger('horario_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->foreign('horario_id')->references('id')->on('horarios');
+            $table->unique(['curso_id', 'horario_id']);
             $table->timestamps();
         });
     }

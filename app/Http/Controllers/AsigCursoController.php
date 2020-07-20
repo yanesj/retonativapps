@@ -31,12 +31,26 @@ class AsigCursoController extends Controller
 		]);
 
 		if($validation->passes()){
-			$estudiante= Estudiante::find($request->estudiante_id);
-			$estudiante->cursos()->attach([$request->curso_id]);
-			return response()->json([
-				'message'=>'Curso Asignado Exitosamente',
-				'class_name'=>'alert-success'
-			]);
+			
+			try {
+				$date = date('Y-m-d H:i:s');
+				$estudiante= Estudiante::find($request->estudiante_id);
+				$estudiante->cursos()->attach($request->curso_id,['created_at' => $date = date('Y-m-d H:i:s')]);
+				return response()->json([
+					'message'=>'Curso Asignado Exitosamente',
+					'class_name'=>'alert-success'
+				]);
+
+			} catch (\Illuminate\Database\QueryException $e) {
+				
+
+				return response()->json([
+					'message'=>'Error en el proceso de inserción en la base de datos,Verifique la información a insertar.',
+					'class_name'=>'alert-danger'
+				]);
+
+			}
+
 		}
 		else{
 			return response()->json([

@@ -19,6 +19,7 @@ class CreateCursoEstudianteTable extends Migration
             $table->bigInteger('estudiante_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes');
+            $table->unique(['curso_id', 'estudiante_id']);
 
             $table->timestamps();
         });

@@ -5,9 +5,11 @@
 @section('sidebar')
 <div class="sidebar">
 	<a   href="{{route('home')}}">Home</a>
-	<a class="active"  href="{{route('estudiante')}}">Crear Estudiantes</a>
+	<a   href="{{route('estudiante')}}">Crear Estudiantes</a>
+	<a   href="{{route('viewStudent')}}">Ver Estudiantes</a>
 	<a   href="{{route('curso')}}">Crear Cursos</a>
-	<a   href="{{route('asigCurso')}}">Asignar Cursos</a>
+	<a   href="{{route('viewCourses')}}">Ver Cursos</a>
+	<a class="active"   href="{{route('asigCurso')}}">Asignar Cursos</a>
 	<a class="dropdown-item" href="{{ route('logout') }}"
 	onclick="event.preventDefault();
 	document.getElementById('logout-form').submit();">
@@ -142,8 +144,9 @@
 						    	alert(msg.message);
 						    	$("#register_student").prop('disabled', false);
 						    	$("#register_student").text('Asignar Curso');
-						    	resetform();
-
+						    	if(msg.class_name!='alert-danger'){	
+						    		resetform();
+						    	} 
 						    }
 						});
 

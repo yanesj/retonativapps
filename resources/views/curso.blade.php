@@ -5,8 +5,10 @@
 @section('sidebar')
 <div class="sidebar">
 	<a   href="{{route('home')}}">Home</a>
-	<a class="active"  href="{{route('estudiante')}}">Crear Estudiantes</a>
-	<a   href="{{route('curso')}}">Crear Cursos</a>
+	<a   href="{{route('estudiante')}}">Crear Estudiantes</a>
+	 <a   href="{{route('viewStudent')}}">Ver Estudiantes</a>
+	<a class="active"  href="{{route('curso')}}">Crear Cursos</a>
+	 <a   href="{{route('viewCourses')}}">Ver Cursos</a>
 	<a   href="{{route('asigCurso')}}">Asignar Cursos</a>
 	<a class="dropdown-item" href="{{ route('logout') }}"
 	onclick="event.preventDefault();
