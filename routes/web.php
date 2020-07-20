@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::put('/actualizarCurso','CursoController@actualizarCurso')->name('actualizarCurso');
 	Route::get('/viewDetailedCourse/{id}','CursoController@viewDetailedCourse')->name('viewDetailedCourse');
 	Route::get('/viewDetailedStudent/{id}','EstudianteController@viewDetailedStudent')->name('viewDetailedStudent');
+	Route::get('/cursosPorEstudiante/{id}','EstudianteController@cursosPorEstudiante')->name('cursosPorEstudiante');
 	Route::post('/actualizarEstudiante','EstudianteController@actualizarEstudiante')->name('actualizarEstudiante');
 	Route::delete('/deleteEstudiante/{id}','EstudianteController@deleteEstudiante')->name('deleteEstudiante');
 	Route::put('/actualizarEstudiante','EstudianteController@actualizarEstudiante')->name('actualizarEstudiante');

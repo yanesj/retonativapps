@@ -108,5 +108,11 @@ class EstudianteController extends Controller
 
 		}
 	}
+
+	public function cursosPorEstudiante(Request $request,$id ){
+         $detailedCourse=Estudiante::with('cursos')->where('id',$id)->get();
+		return response()->json($detailedCourse);
+
+	}
 	
 }

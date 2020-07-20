@@ -20,7 +20,7 @@
             <td>{{ $value->apellido}}</td>
             <td>{{ $value->edad}}</td>
             <td>{{ $value->email }}</td>
-            <td><a class="pickUp" style="cursor:pointer;text-decoration:none;color:blue; " id="{{$value->id}}" onclick="mostrar(this.id)">Editar</a>&nbsp;&nbsp;&nbsp;<a class="pickUp" style="cursor:pointer;text-decoration:none;color:blue; " id="{{$value->id}}" onclick="eliminar(this.id)">Eliminar</a></td>
+            <td><a class="pickUp" style="cursor:pointer;text-decoration:none;color:blue; " id="{{$value->id}}" onclick="mostrar(this.id)">Editar</a>&nbsp;&nbsp;&nbsp;<a class="pickUp" style="cursor:pointer;text-decoration:none;color:blue; " id="{{$value->id}}" onclick="eliminar(this.id)">Eliminar</a>&nbsp;&nbsp;&nbsp;<a class="pickUp" style="cursor:pointer;text-decoration:none;color:blue; " id="{{$value->id}}" onclick="cursosAsociados(this.id)">Ver Cursos Asociados</a></td>
         </tr>
         @endforeach
     </tbody>

@@ -38,13 +38,13 @@
                     @endif
 
                     <div id="tag_container">
-                     @include('presultStudents')
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <form action="POST" name="updateClient" id="updateClient" style="display: none">
+                       @include('presultStudents')
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <form action="POST" name="updateClient" id="updateClient" style="display: none">
     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}"></input>
     <input type="hidden" name="hidden2" id="hidden2" ></input>
     <div class="row">
@@ -105,7 +105,44 @@
     </div>
     <br>
 
+
 </form>
+<br>
+<div class="row" id="cursosAsoc" style="display:none">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><strong>CURSOS ASOCIADOS A UN ALUMNO EN  ESPECÍFICO</strong></div>
+
+            <div class="card-body">
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+                @endif
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="curasoc" id="cur"></label>
+                            <br>
+                            <label for="curasoc2" id="cur2"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            <button type="button" class="btn btn-primary" id="close_panel2" name="close_panel2">Cerrar Panel</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 
@@ -133,6 +170,28 @@
                 console.log(data);
             }
         });
+    }
+    function cursosAsociados(id){
+        $(".clientList").fadeOut("medium");
+        $("#cursosAsoc").fadeIn("medium");
+        $.ajax({
+            type: 'GET', //THIS NEEDS TO BE GET
+            url:'/cursosPorEstudiante/'+id,
+            success: function (data) {
+               
+               $("#cur").text("Nombre del Estudiante: "+data[0].nombre+' '+data[0].apellido);
+                var materias='';
+                $.each(data[0]['cursos'], function(i,item){
+                    materias = materias+data[0]['cursos'][i].nombre+' * ';
+                    
+                });
+                $("#cur2").text("Cursos Asociados: "+materias);
+            },
+            error: function() { 
+                console.log(data);
+            }
+        });
+        
     }
 
 
@@ -178,14 +237,14 @@
                 type: 'GET', //THIS NEEDS TO BE GET
                 url: "/viewDetailedStudent/"+id,
                 success: function (data) {
-                 $("#hidden2").val(data[0].id);
-                 $("#nombre").val(data[0].nombre);
-                 $("#apellido").val(data[0].apellido);
-                 $("#edad").val(data[0].edad);
-                 $("#email").val(data[0].email);
+                   $("#hidden2").val(data[0].id);
+                   $("#nombre").val(data[0].nombre);
+                   $("#apellido").val(data[0].apellido);
+                   $("#edad").val(data[0].edad);
+                   $("#email").val(data[0].email);
 
-             },
-             error: function() { 
+               },
+               error: function() { 
                 console.log(data);
             }
         });
@@ -198,11 +257,11 @@
                     type: 'delete', //THIS NEEDS TO BE GET
                     url: "/deleteEstudiante/"+id,
                     success: function (data) {
-                     alert(data.message);
-                     location.reload();
+                       alert(data.message);
+                       location.reload();
 
-                 },
-                 error: function() { 
+                   },
+                   error: function() { 
                     console.log(data);
                 }
             });
@@ -283,9 +342,15 @@
 
           $("#close_panel").bind( "click", function() {
             $(".clientList").fadeIn("medium");
-              $("#updateClient").fadeOut("medium");
+            $("#updateClient").fadeOut("medium");
 
-          });
+        });
+
+          $("#close_panel2").bind( "click", function() {
+            $(".clientList").fadeIn("medium");
+            $("#cursosAsoc").fadeOut("medium");
+
+        });
 
 
       });
