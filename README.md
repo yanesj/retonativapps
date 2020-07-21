@@ -8,7 +8,8 @@
 </p>
 ## Instrucciones para despliegue
 
-Se clona el projecto y se recomienda para hacer las migraciones, correr php artisan migrate:fresh --seed, debido a que la tabla de "horarios" se llena mediante seeder
+Se clona el projecto y se recomienda para hacer las migraciones, correr php artisan migrate:fresh --seed, debido a que la tabla de "horarios" se llena mediante seeder.
+Al iniciar, en el login, se debe registrar y luego ingresará a la aplicación.
 
 
 ## About Laravel
