@@ -6,10 +6,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+## Instrucciones para despliegue
+
 
 ## Instrucciones de instalación 
 
-Se clona el projecto y se recomienda para hacer las migraciones, correr php artisan migrate:fresh --seed, debido a que la tabla de "horarios" se llena mediante seeder, por último correr composer update.
+
+Se clona el projecto y se recomienda para hacer las migraciones, correr php artisan migrate:fresh --seed, debido a que la tabla de "horarios" se llena mediante seeder.
+Al iniciar, en el login, se debe registrar y luego ingresará a la aplicación.
+
 
 
 ## About Laravel
