@@ -6,7 +6,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-## Instrucciones para despliegue.
+## Instrucciones para despliegue
+
 Se clona el projecto y se recomienda para hacer las migraciones, correr php artisan migrate:fresh --seed, debido a que la tabla de "horarios" se llena mediante seeder
 
 
